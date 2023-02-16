@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UsingScriptsPractice : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
         Debug.Log("I am Alive!");
