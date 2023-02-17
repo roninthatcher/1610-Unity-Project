@@ -32,7 +32,7 @@ public class DestoryCompenent : MonoBehaviour
     {
         if (Input.GetKay(KeyCode.Space))
         {
-            Destory(GetComponent<MeshRenderer>();
+            Destory(GetComponent<MeshRenderer>());
         }
     }
 }
