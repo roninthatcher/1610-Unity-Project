@@ -24,11 +24,11 @@ public class IfStatements : MonoBehaviour
         }
         else if(coffeeTemperature > hotLimitTemperature)
         {
-            print("Coffee is too hot.")
+            print("Coffee is too hot.");
         }
         else
         {
-            print("Coffee is just right.")
+            print("Coffee is just right.");
         }
     }
 }
