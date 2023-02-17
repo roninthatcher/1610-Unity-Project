@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IfStatements : MonoBehaviour
+{
+    float coffeeTemperature = 85.0f;
+    float hotLimitTemperature = 70.0f;
+    float coldLimitTemperature = 40.0f;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            TemperatureTest();
+
+        coffeeTemperature -= Time.deltaTime * 5f;
+    }
+
+    void TempertureTest ()
+    {
+        if(coffeeTemperature < coldLimitTemperature)
+        {
+            print("Coffee is too cold.");
+        }
+        else if(coffeeTemperature > hotLimitTemperature)
+        {
+            print("Coffee is too hot.")
+        }
+        else
+        {
+            print("Coffee is just right.")
+        }
+    }
+}
