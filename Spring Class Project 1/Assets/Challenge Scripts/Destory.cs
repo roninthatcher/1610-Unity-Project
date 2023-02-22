@@ -1,38 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class DestoryBasic : MonoBehaviour
+public class DestroyBasic : MonoBehaviour
 {
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            Destory(gameObject);
+            Destroy(gameObject);
         }
     }
 }
 
-public class DestoryOther : MonoBehaviour
+public class DestoryOther
 {
     public GameObject other;
 
     void Update()
     {
-        if(Input.GetKay(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
         {
             Destory(other);
         }
     }
 }
 
-public class DestoryCompenent : MonoBehaviour
+public class DestroyComponent
 {
     void Update()
     {
-        if (Input.GetKay(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            Destory(GetComponent<MeshRenderer>());
+            Destroy(GetComponent<MeshRenderer>());
         }
     }
 }

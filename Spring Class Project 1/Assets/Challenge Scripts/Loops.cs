@@ -8,20 +8,20 @@ public class ForLoop : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i < numEnemies; i++)
+        for (int i = 0; i < numEnemies; i++)
         {
             Debug.Log("Creating enemy number: " + i);
         }
     }
 }
 
-public class WhileLoop : MonoBehaviour
+public class WhileLoop
 {
     int cupsInTheSink = 4;
 
-    void Start ()
+    void Start()
     {
-        while(cupsInTheSink > 0)
+        while (cupsInTheSink > 0)
         {
             Debug.Log("I've washed a cup!");
             cupsInTheSink--;
@@ -29,9 +29,9 @@ public class WhileLoop : MonoBehaviour
     }
 }
 
-public class DoWhileLoop : Monobehaviour
+public class DoWhileLoop
 {
-    void Start ()
+    void Start()
     {
         bool shouldContinue = false;
 
@@ -42,9 +42,9 @@ public class DoWhileLoop : Monobehaviour
     }
 }
 
-public class ForeachLoop : Monobehaviour
+public class ForEachLoop
 {
-    void Start ()
+    void Start()
     {
         string[] strings = new string[3];
 
@@ -52,9 +52,9 @@ public class ForeachLoop : Monobehaviour
         strings[1] = "Second string";
         strings[2] = "Third string";
 
-        foreach(string item in strings)
+        foreach (string item in strings)
         {
-            Print(item);
+            print(item);
         }
     }
 }

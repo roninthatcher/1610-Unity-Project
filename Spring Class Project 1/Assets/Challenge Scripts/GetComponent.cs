@@ -25,12 +25,12 @@ public class UsingOtherComponent : MonoBehaviour
     }
 }
 
-public class AnotherScript : Monobehaviour
+public class AnotherScript
 {
     public int playerScore = 9001;
 }
 
-public class YetAnotherScript : MonoBehaviour
+public class YetAnotherScript
 {
     public int numberOfPlayerDeaths = 3;
 }
