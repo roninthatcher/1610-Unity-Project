@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa9ce9828cd8474eb6034c3e051756a, type: 3}
   m_Name: New Vector 3 Data
   m_EditorClassIdentifier: 
-  Enemies: 
-  numberOfEnemiesToCreate: 0
-  spawnPoints: []
+  numberOfBombchusToCreate: 0
+  speed: 3
+  destination: {x: 0, y: 0, z: 0}

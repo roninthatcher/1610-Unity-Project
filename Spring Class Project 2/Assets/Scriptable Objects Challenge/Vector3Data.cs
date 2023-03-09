@@ -11,7 +11,7 @@ public class Vector3Data : ScriptableObject
 
     public void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+       
     }
 }
 
