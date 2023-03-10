@@ -5,23 +5,18 @@ using UnityEngine.Events;
 
 public class UnityEvent1 : MonoBehaviour
 {
-    public event EventHandler OnSpacePressed;
-
-    void Start()
-    {
-        OnSpacePressed += Testing_OnSpacePressed;
-    }
-
-    private void Testing_OnSpacePressed(object sender, EventArgs e)
-    {
-        Debug.Log("Save Complete");
-    }
+    UnityEvent SaveProgress;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnSpacePressed?.Invoke(this, EventArgs.Empty);
+            SaveProgress.Invoke();
         }
+    }
+
+    void Save()
+    {
+        Debug.Log("Save Complete");
     }
 }
