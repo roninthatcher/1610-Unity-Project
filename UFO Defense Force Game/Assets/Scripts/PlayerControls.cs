@@ -11,6 +11,13 @@ public class PlayerControls : MonoBehaviour
     public Transform blaster;
     public GameObject lazerBolt;
 
+    public GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
     void Update()
     {
         // Set HorizontalInput to recieve values from keyboard
@@ -30,7 +37,7 @@ public class PlayerControls : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
         //if space bar is pressed, fire lazerBolt
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false)
         {
             //Create LazerBolt at the Blaster transform position maintaining the objects rotation.
             Instantiate(lazerBolt, blaster.transform.position, lazerBolt.transform.rotation);
