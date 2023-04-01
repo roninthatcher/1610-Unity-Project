@@ -39,6 +39,7 @@ public class PlayerControls : MonoBehaviour
         //if space bar is pressed, fire lazerBolt
         if(Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false)
         {
+            FindObjectOfType<AudioManager>().Play("Laser");
             //Create LazerBolt at the Blaster transform position maintaining the objects rotation.
             Instantiate(lazerBolt, blaster.transform.position, lazerBolt.transform.rotation);
         }

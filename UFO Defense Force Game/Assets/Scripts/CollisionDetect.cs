@@ -17,5 +17,6 @@ public class CollisionDetect : MonoBehaviour
         scoreManager.IncreaseScore(scoreToGive); //Increase the Score
         Destroy(gameObject); //Destory this game object
         Destroy(other.gameObject); //Destory other game object it hits
+        FindObjectOfType<AudioManager>().Play("Explosion");
     }
 }
