@@ -28,11 +28,11 @@ public class DragableBehaviour : MonoBehaviour
             position = cameraObj.ScreenToViewPoint(Input.mousePosition) + offset;
             transform.position = position;
         }
+    }
 
-        private void OnMouseUp()
-        {
-            draggable = false;
-            endDragEvent.Invoke();
-        }
+    private void OnMouseUp()
+    {
+        draggable = false;
+        endDragEvent.Invoke();
     }
 }
