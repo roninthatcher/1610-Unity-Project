@@ -36,7 +36,7 @@ public class Instancer : ScriptableObject
         }
     }
 
-    public void CreateInstanceFromListCounting(Vector3DataList obj)
+    public void CreateInstanceListRandomly(Vector3DataList obj)
     {
         num = Random.Range(0, obj.vector3DList.Count - 1);
         Instantiate(prefab, obj.vector3DList[0].value, Quaternion.Identity);
