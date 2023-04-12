@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
-[RequireComponent(typeof(Text))]
+[RequireComponent(typeof(text))]
 public class TextLabelBehaviour : MonoBehaviour
 {
-    private Text label;
+    private text label;
     public UnityEvent startEvent;
 
     private void Start()
