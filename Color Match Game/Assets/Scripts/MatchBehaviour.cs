@@ -11,7 +11,7 @@ public class MatchBehaviour : IDContainerBehaviour
     private IEnumerator OnTriggerEnter(Collider other)
     {
         var tempObj = other.GetComponent<IDContainerBehaviour>();
-        if (tempObj != null)
+        if (tempObj == null)
             yield break;
 
         var otherID = tempObj.idObj;
@@ -22,7 +22,7 @@ public class MatchBehaviour : IDContainerBehaviour
         else
         {
             noMatchEvent.Invoke();
-            yield return new WaitForSecond(0.5f);
+            yield return new WaitForSeconds(0.5f);
             noMatchDelayedEvent.Invoke();
         }
     }
