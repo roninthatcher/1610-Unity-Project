@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CoroutineBehavior : MonoBehaviour
+public class CoroutineBehaviour : MonoBehaviour
 {
-    public UnityEvent startEvent, startCountEvent, repeatCountEvent, endCountEvent, RepeatUntilFalseEvent;
+    public UnityEvent startEvent, startCountEvent, repeatCountEvent, endCountEvent, repeatUntilFalseEvent;
 
     public bool canRun;
     public IntData counterNum;
@@ -13,30 +13,30 @@ public class CoroutineBehavior : MonoBehaviour
     private WaitForSeconds wfsObj;
     private WaitForFixedUpdate wffuObj;
 
-    private void Start()
-    {
-        wfsObj = new WaitForSeconds(seconds);
-        wffuObj = new WaitForFixedUpdate();
-        startEvent.Invoke();
-    }
-
     public void StartCounting()
     {
         StartCoroutine(Counting());
     }
 
-    IEnumerator Counting()
+    private void Start()
     {
+        startEvent.Invoke();
+        wfsObj = new WaitForSeconds(seconds);
+        wffuObj = new WaitForFixedUpdate();
+    }
 
+    private IEnumerator Counting()
+    {
         startCountEvent.Invoke();
         yield return wfsObj;
 
         while (counterNum.value > 0)
         {
-            yield return wfsObj;
             repeatCountEvent.Invoke();
             counterNum.value--;
+            yield return wfsObj;
         }
+
         endCountEvent.Invoke();
     }
 
@@ -51,7 +51,7 @@ public class CoroutineBehavior : MonoBehaviour
         while (canRun)
         {
             yield return wfsObj;
-            RepeatUntilFalseEvent.Invoke();
+            repeatUntilFalseEvent.Invoke();
         }
     }
 }
