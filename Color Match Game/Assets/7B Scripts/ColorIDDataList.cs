@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorIDList : MonoBehaviour
+[CreateAssetMenu]
+public class ColorIDDataList : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<ColorID> colorIDList;
 
-    // Update is called once per frame
-    void Update()
+    public ColorID currentColor;
+
+    private int num;
+
+    public void SetCurrentColorRandomly()
     {
-        
+        num = Random.Range(0, colorIDList.Count);
+        currentColor = colorIDList[num];
     }
 }
