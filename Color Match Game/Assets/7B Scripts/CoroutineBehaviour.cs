@@ -7,11 +7,13 @@ public class CoroutineBehaviour : MonoBehaviour
 {
     public UnityEvent startEvent, startCountEvent, repeatCountEvent, endCountEvent, repeatUntilFalseEvent;
 
-    public bool canRun;
+    private bool canRun;
     public IntData counterNum;
     public float seconds = 3.0f;
     private WaitForSeconds wfsObj;
     private WaitForFixedUpdate wffuObj;
+
+    public global::System.Boolean CanRun { get => canRun; set => canRun = value; }
 
     public void StartCounting()
     {
@@ -42,13 +44,13 @@ public class CoroutineBehaviour : MonoBehaviour
 
     public void StartRepeatUntilFalse()
     {
-        canRun = true;
+        CanRun = true;
         StartCoroutine(RepeatUntilFalse());
     }
 
     private IEnumerator RepeatUntilFalse()
     {
-        while (canRun)
+        while (CanRun)
         {
             yield return wfsObj;
             repeatUntilFalseEvent.Invoke();
